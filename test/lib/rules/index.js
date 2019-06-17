@@ -25,17 +25,45 @@ var ruleTester = new RuleTester();
 ruleTester.run('no-state-comment-line', rule, {
   valid: [
     `
-    state = {
-      name: 'name' // 名字
-    }
+      state = {
+        name: 'name' // 名字
+      }
     `,
+    `
+      state = {
+        // 名字
+        name: 'name'
+      }
+    `,
+    `
+      this.state = {
+        name: 'name' // 名字
+      }
+    `,
+    `
+      this.state = {
+        // 名字
+        name: 'name'
+      }
+    `
   ],
   invalid: [
     {
       code: `
-      state = {
-        name: 'name'
-      }
+        state = {
+          name: 'name'
+        }
+      `,
+      errors: [{
+        message: 'please add comment line for state',
+        type: 'AssignmentExpression'
+      }]
+    },
+    {
+      code: `
+        this.state = {
+          name: 'name'
+        }
       `,
       errors: [{
         message: 'please add comment line for state',

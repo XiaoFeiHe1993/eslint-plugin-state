@@ -1,6 +1,7 @@
 {
   "rules": {
-    "state/no-state-comment-line": "error"
+    "state/no-state-comment-line": "error",
+    "state/no-data-comment-line": "error"
   },
   "plugins": ["state"],
   "parser": "babel-eslint"

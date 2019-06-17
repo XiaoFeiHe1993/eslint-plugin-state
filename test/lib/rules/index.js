@@ -29,7 +29,23 @@ ruleTester.run('no-state-comment-line', rule, {
         // 名字
         name: 'name'
       }
+    `,
     `
+      state = {
+        name: 'name' // 名字
+      }
+    `,
+    `
+      this.state = {
+        // 名字
+        name: 'name'
+      }
+    `,
+    `
+      this.state = {
+        name: 'name' // 名字
+      }
+    `,
   ],
   invalid: [
     {
@@ -39,7 +55,18 @@ ruleTester.run('no-state-comment-line', rule, {
         }
       `,
       errors: [{
-        message: 'please add comment line for state',
+        message: 'please add comments for state',
+        type: 'AssignmentExpression'
+      }]
+    },
+    {
+      code: `
+        this.state = {
+          name: 'name'
+        }
+      `,
+      errors: [{
+        message: 'please add comments for state',
         type: 'AssignmentExpression'
       }]
     }

@@ -1,13 +1,17 @@
 {
   "name": "eslint-plugin-state",
   "version": "0.0.1",
-  "description": "add comment line for react this.state",
+  "description": "add comments for react this.state",
   "keywords": [
     "eslint",
     "eslintplugin",
     "eslint-plugin",
     "React"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JackFei/eslint-plugin-state.git"
+  },
   "author": "xiaofeihe",
   "main": "lib/index.js",
   "scripts": {

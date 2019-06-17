@@ -1,10 +1,6 @@
-# eslint-plugin-nns
+# eslint-plugin-state
 
-add comment line for this.state
-
-## Feature list
-
- * if you not add comment line for state, it will show suggestion
+if you not add comment line for state, it will show suggestion
 
 ## Installation
 
@@ -24,7 +20,7 @@ $ npm install eslint-plugin-state --save-dev
 
 ## Usage
 
-Add `nns` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `state` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
@@ -43,7 +39,3 @@ Then configure the rules you want to use under the rules section.
     }
 }
 ```
-
-## Supported Rules
-
-* Fill in provided rules here

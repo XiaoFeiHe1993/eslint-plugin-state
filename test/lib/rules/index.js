@@ -26,22 +26,6 @@ ruleTester.run('no-state-comment-line', rule, {
   valid: [
     `
       state = {
-        name: 'name' // 名字
-      }
-    `,
-    `
-      state = {
-        // 名字
-        name: 'name'
-      }
-    `,
-    `
-      this.state = {
-        name: 'name' // 名字
-      }
-    `,
-    `
-      this.state = {
         // 名字
         name: 'name'
       }
@@ -51,17 +35,6 @@ ruleTester.run('no-state-comment-line', rule, {
     {
       code: `
         state = {
-          name: 'name'
-        }
-      `,
-      errors: [{
-        message: 'please add comment line for state',
-        type: 'AssignmentExpression'
-      }]
-    },
-    {
-      code: `
-        this.state = {
           name: 'name'
         }
       `,

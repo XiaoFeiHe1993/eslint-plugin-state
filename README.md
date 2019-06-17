@@ -1,6 +1,6 @@
 # eslint-plugin-state
 
-if you not add comment line for state, it will show suggestion
+if you not add comments for state, it will show error
 
 ## Installation
 

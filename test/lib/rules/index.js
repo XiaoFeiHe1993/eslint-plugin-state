@@ -11,10 +11,7 @@ var rule = require('../../../lib/rules/no-state-comment-line'),
   RuleTester = require('eslint').RuleTester;
 
 RuleTester.setDefaultConfig({
-  parser: 'babel-eslint',
-  ecmaFeatures: {
-    modules: true,
-  },
+  parser: 'babel-eslint'
 });
 
 //------------------------------------------------------------------------------
@@ -55,7 +52,7 @@ ruleTester.run('no-state-comment-line', rule, {
         }
       `,
       errors: [{
-        message: 'please add comments for state',
+        message: 'please add comments for state variate',
         type: 'AssignmentExpression'
       }]
     },
@@ -66,7 +63,7 @@ ruleTester.run('no-state-comment-line', rule, {
         }
       `,
       errors: [{
-        message: 'please add comments for state',
+        message: 'please add comments for state variate',
         type: 'AssignmentExpression'
       }]
     }

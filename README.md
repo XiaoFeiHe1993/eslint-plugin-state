@@ -1,6 +1,6 @@
 # eslint-plugin-state
 
-if you not add comments for state, it will show error
+if you not add comments for react state variate, it will show error
 
 如果你没有给react state变量添加注释，那么eslint会提示一个错误，培养为变量写注释的好习惯
 

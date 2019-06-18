@@ -49,6 +49,11 @@ ruleTester.run('no-state-comment-line', rule, {
           name: 'name' // 名字
         };
       }
+    `,
+    `
+      this.state = {
+        name: 'name', // 名字
+      }
     `
   ],
   invalid: [
@@ -60,7 +65,7 @@ ruleTester.run('no-state-comment-line', rule, {
       `,
       errors: [{
         message: 'please add comments for state variate',
-        type: 'AssignmentExpression'
+        type: 'Property'
       }]
     },
     {
@@ -71,20 +76,7 @@ ruleTester.run('no-state-comment-line', rule, {
       `,
       errors: [{
         message: 'please add comments for state variate',
-        type: 'AssignmentExpression'
-      }]
-    },
-    {
-      code: `
-        class Welcome extends React.Component {
-          state = {
-            name: 'name'
-          };
-        }
-      `,
-      errors: [{
-        message: 'please add comments for state variate',
-        type: 'ClassProperty'
+        type: 'Property'
       }]
     }
   ]

@@ -17,6 +17,10 @@ class Welcome extends React.Component {
       // this is a name
       name: 'name'
     };
+
+    this.state = {
+      name: 'name', // this is a name
+    };
   }
 
   render() {

@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-state",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "add comments for react state variate",
   "keywords": [
     "eslint",

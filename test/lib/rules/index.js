@@ -46,7 +46,7 @@ ruleTester.run('no-state-comment-line', rule, {
     `
       class Welcome extends React.Component {
         state = {
-          name: 'name' // 名字
+          name: 'name', // 名字
         };
       }
     `,

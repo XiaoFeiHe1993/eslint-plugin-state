@@ -1,6 +1,10 @@
 class Welcome extends React.Component {
   state = {
-    name: 'name',
+    name: 'name'
+  };
+
+  state = {
+    name: 'name', // 名字
   };
 
   constructor(props) {

@@ -51,6 +51,16 @@ ruleTester.run('no-state-comment-line', rule, {
       }
     `,
     `
+      class Welcome extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            name: 'name', // 名字
+          };
+        }
+      }
+    `,
+    `
       this.state = {
         name: 'name', // 名字
       }

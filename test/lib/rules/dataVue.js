@@ -19,7 +19,7 @@ RuleTester.setDefaultConfig({
 //------------------------------------------------------------------------------
 
 var ruleTester = new RuleTester();
-ruleTester.run('no-state-comment-line', rule, {
+ruleTester.run('no-data-comment-line', rule, {
   valid: [
     `
      export default {
@@ -30,7 +30,16 @@ ruleTester.run('no-state-comment-line', rule, {
       }
     }
     `,
-        `
+    `
+     export default {
+      data() {
+        return {
+          name: 'name', // 名字
+        }
+      }
+    }
+    `,
+    `
      export default {
       data() {
         return {
@@ -54,7 +63,22 @@ ruleTester.run('no-state-comment-line', rule, {
       `,
       errors: [{
         message: 'please add comments for data variate',
-        type: 'ReturnStatement'
+        type: 'Property'
+      }]
+    },
+    {
+      code: `
+        export default {
+          data() {
+            return {
+              name: 'name',
+            }
+          }
+        }
+      `,
+      errors: [{
+        message: 'please add comments for data variate',
+        type: 'Property'
       }]
     }
   ]

@@ -88,6 +88,19 @@ ruleTester.run('no-state-comment-line', rule, {
         message: 'please add comments for state variate',
         type: 'Property'
       }]
+    },
+    {
+      code: `
+        class Welcome extends React.Component {
+          state = {
+            name: 'name'
+          };
+        }
+      `,
+      errors: [{
+        message: 'please add comments for state variate',
+        type: 'Property'
+      }]
     }
   ]
 });

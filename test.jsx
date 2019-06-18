@@ -4,13 +4,26 @@ class Welcome extends React.Component {
   };
 
   state = {
+    name: 'name',
+  };
+
+  state = {
     name: 'name', // 名字
+  };
+
+  state = {
+    // 名字
+    name: 'name'
   };
 
   constructor(props) {
     super(props);
     this.state = {
       name: 'name',
+    };
+
+    this.state = {
+      name: 'name'
     };
 
     this.state = {
@@ -23,7 +36,7 @@ class Welcome extends React.Component {
     };
 
     this.state = {
-      name: 'name', // this is a name
+      name : 'name', // this is a name
     };
   }
 

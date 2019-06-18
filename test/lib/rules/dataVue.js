@@ -44,7 +44,7 @@ ruleTester.run('no-state-comment-line', rule, {
       `,
       errors: [{
         message: 'please add comments for data variate',
-        type: 'Property'
+        type: 'ReturnStatement'
       }]
     }
   ]

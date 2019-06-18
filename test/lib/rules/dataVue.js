@@ -29,6 +29,16 @@ ruleTester.run('no-state-comment-line', rule, {
         }
       }
     }
+    `,
+        `
+     export default {
+      data() {
+        return {
+          // 名字
+          name: 'name'
+        }
+      }
+    }
     `
   ],
   invalid: [

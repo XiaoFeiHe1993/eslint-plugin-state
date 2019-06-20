@@ -6,19 +6,28 @@ const searchComments = (context, node, text) => {
   // 情况三：注释在逗号后面，并且要判断是不是在下一个变量后面
   let existComments = false;
   let nextNode = null;
+  let beforeBode = null;
   const comments = context.getAllComments();
   if (comments && comments.length > 0) {
-    // 找出下一个变量
     if (node.parent && node.parent.properties) {
       const {properties} = node.parent;
+      // 找出下一个变量
       for (let i = 0; i < properties.length - 1; i++) {
         if (node.start === properties[i].start && node.end === properties[i].end) {
           nextNode = properties[i + 1];
         }
       }
+      // 找出上一个变量
+      for (let k = 1; k < properties.length; k++) {
+        if (node.start === properties[k].start && node.end === properties[k].end) {
+          beforeBode = properties[k - 1];
+        }
+      }
     }
+
     // 判断注释的位置
     comments.map((item) => {
+      // 注释在节点后面
       if (item.start > node.end && item.start > node.parent.start && item.end < node.parent.end) {
         if (nextNode && item.end < nextNode.start) {
           existComments = true;
@@ -26,9 +35,17 @@ const searchComments = (context, node, text) => {
           existComments = true;
         }
       }
+      // 注释在节点前面
+      if (item.end < node.start && item.start > node.parent.start && item.end < node.parent.end) {
+        if (beforeBode && item.start > beforeBode.end) {
+          existComments = true;
+        } else if (!beforeBode) {
+          existComments = true;
+        }
+      }
     });
   }
-  if (leadingComments && trailingComments && !existComments) {
+  if (!existComments) {
     context.report(node, text);
   }
 };

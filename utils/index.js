@@ -20,10 +20,10 @@ const searchComments = (context, node, text) => {
     // 判断注释的位置
     comments.map((item) => {
       if (item.start > node.end && item.start > node.parent.start && item.end < node.parent.end) {
-        existComments = true;
-        // 如果该注释在下一个变量后面
-        if (nextNode && item.start > nextNode.end) {
-          existComments = false;
+        if (nextNode && item.end < nextNode.start) {
+          existComments = true;
+        } else if (!nextNode) {
+          existComments = true;
         }
       }
     });

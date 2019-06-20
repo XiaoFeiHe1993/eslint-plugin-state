@@ -46,6 +46,18 @@ ruleTester.run('no-state-comment-line', rule, {
       }
     `,
     `
+      state = {
+        name: 'name', // 名字
+        title: 'title', // 标题
+      }
+    `,
+    `
+      this.state = {
+        name: 'name', // 名字
+        title: 'title', // 标题
+      }
+    `,
+    `
       class Welcome extends React.Component {
         state = {
           name: 'name', // 名字

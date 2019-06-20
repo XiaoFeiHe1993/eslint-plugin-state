@@ -10,6 +10,8 @@
 var rule = require('../../../lib/rules/no-data-comment-line'),
   RuleTester = require('eslint').RuleTester;
 
+const tool = require('../../../utils/index');
+
 RuleTester.setDefaultConfig({
   parser: 'babel-eslint'
 });
@@ -62,7 +64,23 @@ ruleTester.run('no-data-comment-line', rule, {
         }
       `,
       errors: [{
-        message: 'please add comments for data variate',
+        message: tool.VUE_DATA_TEXT,
+        type: 'Property'
+      }]
+    },
+    {
+      code: `
+        export default {
+          data() {
+            return {
+              name: 'name',
+              title: 'title', // this is a title
+            }
+          }
+        }
+      `,
+      errors: [{
+        message: tool.VUE_DATA_TEXT,
         type: 'Property'
       }]
     },
@@ -77,7 +95,7 @@ ruleTester.run('no-data-comment-line', rule, {
         }
       `,
       errors: [{
-        message: 'please add comments for data variate',
+        message: tool.VUE_DATA_TEXT,
         type: 'Property'
       }]
     }

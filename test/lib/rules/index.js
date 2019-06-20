@@ -10,6 +10,8 @@
 var rule = require('../../../lib/rules/no-state-comment-line'),
   RuleTester = require('eslint').RuleTester;
 
+const tool = require('../../../utils/index');
+
 RuleTester.setDefaultConfig({
   parser: 'babel-eslint'
 });
@@ -74,7 +76,7 @@ ruleTester.run('no-state-comment-line', rule, {
         }
       `,
       errors: [{
-        message: 'please add comments for state variate',
+        message: tool.REACT_STATE_TEXT,
         type: 'Property'
       }]
     },
@@ -85,7 +87,7 @@ ruleTester.run('no-state-comment-line', rule, {
         }
       `,
       errors: [{
-        message: 'please add comments for state variate',
+        message: tool.REACT_STATE_TEXT,
         type: 'Property'
       }]
     },
@@ -98,7 +100,7 @@ ruleTester.run('no-state-comment-line', rule, {
         }
       `,
       errors: [{
-        message: 'please add comments for state variate',
+        message: tool.REACT_STATE_TEXT,
         type: 'Property'
       }]
     },
@@ -110,7 +112,7 @@ ruleTester.run('no-state-comment-line', rule, {
         }
       `,
       errors: [{
-        message: 'please add comments for state variate',
+        message: tool.REACT_STATE_TEXT,
         type: 'Property'
       }]
     },
@@ -122,7 +124,7 @@ ruleTester.run('no-state-comment-line', rule, {
         }
       `,
       errors: [{
-        message: 'please add comments for state variate',
+        message: tool.REACT_STATE_TEXT,
         type: 'Property'
       }]
     }

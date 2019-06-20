@@ -101,6 +101,30 @@ ruleTester.run('no-state-comment-line', rule, {
         message: 'please add comments for state variate',
         type: 'Property'
       }]
+    },
+    {
+      code: `
+        this.state = {
+          name: 'name',
+          title: 'title', // this is a title
+        }
+      `,
+      errors: [{
+        message: 'please add comments for state variate',
+        type: 'Property'
+      }]
+    },
+    {
+      code: `
+        state = {
+          name: 'name',
+          title: 'title', // this is a title
+        }
+      `,
+      errors: [{
+        message: 'please add comments for state variate',
+        type: 'Property'
+      }]
     }
   ]
 });

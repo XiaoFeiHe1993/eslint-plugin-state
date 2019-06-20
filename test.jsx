@@ -8,6 +8,11 @@ class Welcome extends React.Component {
   };
 
   state = {
+    name: 'name',
+    title: 'title', // this is a title
+  }
+
+  state = {
     name: 'name', // 名字
   };
 
@@ -25,6 +30,11 @@ class Welcome extends React.Component {
     this.state = {
       name: 'name'
     };
+
+    this.state = {
+      name: 'name',
+      title: 'title', // this is a title
+    }
 
     this.state = {
       name: 'name' // this is a name
